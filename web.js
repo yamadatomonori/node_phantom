@@ -107,7 +107,7 @@ Web.prototype = {
                 self.exec('ls -la ./bin', function(error, stdout, stderr) {
                   console.log(stdout);
                   console.log(stderr);
-                }
+                });
               });
         });
   }
