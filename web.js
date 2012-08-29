@@ -92,11 +92,16 @@ Web.prototype = {
   runTest: function() {
     var self = this;
 
-    this.exec('ln -s phantomjs /usr/local/bin/phantomjs', function() {
-      self.exec('ls -la /usr/local/bin', function(error, stdout, stderr) {
-        console.log(stdout);
-      });
-    });
+    this.exec(
+        'ln -s phantomjs /usr/local/bin/phantomjs', function(
+            error, stdout, stderr) {
+          console.log('out:' + stdout);
+          console.log('err:' + stderr);
+
+          self.exec('ls -la /usr/local/bin', function(error, stdout, stderr) {
+            console.log(stdout);
+          });
+        });
   }
 };
 
