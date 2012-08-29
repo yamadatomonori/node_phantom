@@ -62,7 +62,7 @@ Web.prototype = {
       self.mapPath.call(self, '/compiled.css', 'css', error, stdout, stderr);
     });
 
-    this.runTest();
+    //this.runTest();
   },
 
 
