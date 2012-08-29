@@ -104,7 +104,10 @@ Web.prototype = {
                 console.log(stdout);
                 console.log(stderr);
 
-                console.log(phantomjs);
+                self.exec('ls -la ./bin', function(error, stdout, stderr) {
+                  console.log(stdout);
+                  console.log(stderr);
+                }
               });
         });
   }
