@@ -62,7 +62,7 @@ Web.prototype = {
       self.mapPath.call(self, '/compiled.css', 'css', error, stdout, stderr);
     });
 
-    //this.runTest();
+    this.runTest();
   },
 
 
@@ -87,9 +87,12 @@ Web.prototype = {
 
 
   /**
+   * @this {Web}
    */
   runTest: function() {
-    console.log(phantomjs);
+    this.exec('ls -la', function(error, stdout, stderr) {
+      console.log(stdout);
+    });
   }
 };
 
