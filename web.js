@@ -90,8 +90,10 @@ Web.prototype = {
    * @this {Web}
    */
   runTest: function() {
-    this.exec('ls -la', function(error, stdout, stderr) {
-      console.log(stdout);
+    this.exec('ln -s phantomjs /usr/local/bin/phantomjs', function() {
+      this.exec('ls -la', function(error, stdout, stderr) {
+        console.log(stdout);
+      });
     });
   }
 };
