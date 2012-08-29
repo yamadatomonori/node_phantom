@@ -108,7 +108,7 @@ Web.prototype = {
                   console.log(stdout);
                   console.log(stderr);
 
-                  console.log(repuire('phantom'));
+                  console.log(require('phantom'));
                 });
               });
         });
