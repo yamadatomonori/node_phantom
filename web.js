@@ -108,7 +108,12 @@ Web.prototype = {
                   console.log(stdout);
                   console.log(stderr);
 
-                  console.log(require('phantom'));
+                  self.exec(
+                      'phantomjs hello.js', function(error, stdout, stderr) {
+                      console.log(stdout);
+                      console.log(stderr);
+
+                    });
                 });
               });
         });
