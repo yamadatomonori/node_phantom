@@ -92,8 +92,12 @@ Web.prototype = {
   runTest: function() {
     var self = this;
 
-    self.exec('cake phantom');
+    self.exec('cake phantom', function(error, stdout, stderr) {
+      console.log(stdout);
+      console.log(stderr);
+    });
 
+    /*
     self.exec(
         'ln -s /app/phantomjs/bin/phantomjs ./bin/phantomjs', function(
             error, stdout, stderr) {
@@ -119,6 +123,7 @@ Web.prototype = {
                 });
               });
         });
+        */
   }
 };
 
