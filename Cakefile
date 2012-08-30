@@ -9,9 +9,7 @@ task 'phantom', 'set up phantomjs and run the tests', ->
   .then ->
     muffin.exec 'chmod a+x /app/phantomjs/bin/phantomjs'
   .then ->
-    muffin.exec 'phantomjs hello.js'
-  .then ->
-    muffin.exec 'echo 1111', (error, stdout, stderr) ->
+    muffin.exec 'phantomjs hello.js' , (error, stdout, stderr) ->
       sys.print stdout
       sys.print stderr
 
