@@ -1,5 +1,5 @@
 muffin = require 'muffin'
-sys = require 'sys'
+util = require 'util'
 Q = require 'q'
 
       
@@ -63,4 +63,4 @@ task 'builder', 'building closure library script', ->
       --root=client/js'
     
     Q.when (muffin.exec command)[1], (result) ->
-      sys.print result[0]
+      util.print result[0]
