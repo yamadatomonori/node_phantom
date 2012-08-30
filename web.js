@@ -93,8 +93,8 @@ Web.prototype = {
     var self = this;
 
     self.exec('cake phantom', function(error, stdout, stderr) {
-      console.log(stdout);
-      console.log(stderr);
+      //console.log(stdout);
+      //console.log(stderr);
     });
   }
 };
