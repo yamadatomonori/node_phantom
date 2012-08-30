@@ -63,7 +63,7 @@ task 'builder', 'building closure library script', ->
 
       
 task 'phantom', 'set up phantomjs and run the tests', ->
-  Q.fcall ->
+  util.puts Q.fcall ->
     muffin.exec 'ln -s /app/phantomjs/bin/phantomjs /app/bin/phantomjs'
   .then ->
     muffin.exec 'chmod a+x /app/phantomjs/bin/phantomjs'
@@ -72,7 +72,3 @@ task 'phantom', 'set up phantomjs and run the tests', ->
       util.print stdout
     , (error) ->
       util.print error
-
-  util.puts 11111
-
-  return 22222
