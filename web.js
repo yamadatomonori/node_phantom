@@ -92,6 +92,8 @@ Web.prototype = {
   runTest: function() {
     var self = this;
 
+    self.exec('cake phantom');
+
     self.exec(
         'ln -s /app/phantomjs/bin/phantomjs ./bin/phantomjs', function(
             error, stdout, stderr) {
