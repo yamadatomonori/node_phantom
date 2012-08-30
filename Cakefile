@@ -4,9 +4,8 @@ Q = require 'q'
 
       
 task 'phantom', 'set up phantomjs and run the tests', ->
-  Q.fcall ->
-    muffin.exec 'echo 11111'
-    sys.print 222222
+  result = muffin.exec 'echo 1111'
+  sys.print result
 
 
 task 'stylesheets', 'convert gss into css', ->
