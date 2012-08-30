@@ -1,5 +1,5 @@
 muffin = require 'muffin'
-sys = require 'sys'
+util = require 'util'
 Q = require 'q'
 
       
@@ -10,8 +10,8 @@ task 'phantom', 'set up phantomjs and run the tests', ->
     muffin.exec 'chmod a+x /app/phantomjs/bin/phantomjs'
   .then ->
     muffin.exec 'phantomjs hello.js' , (error, stdout, stderr) ->
-      sys.print stdout
-      sys.print stderr
+      util.print stdout
+      util.print stderr
 
 
 task 'stylesheets', 'convert gss into css', ->
@@ -70,4 +70,4 @@ task 'builder', 'building closure library script', ->
       --root=client/js'
     
     Q.when (muffin.exec command)[1], (result) ->
-      sys.print result[0]
+      util.print result[0]
