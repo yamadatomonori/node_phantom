@@ -4,8 +4,7 @@ Q = require 'q'
 
       
 task 'phantom', 'set up phantomjs and run the tests', ->
-  Q.fcall(muffin.exec 'echo 11111')
-    .end()
+  Q.fcall(muffin.exec 'echo 11111').end()
 
 
 task 'stylesheets', 'convert gss into css', ->
