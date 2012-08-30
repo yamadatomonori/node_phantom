@@ -70,6 +70,5 @@ task 'phantom', 'set up phantomjs and run the tests', ->
   .then ->
     muffin.exec 'phantomjs hello.js' , (error, stdout, stderr) ->
       util.print stdout
-    ,(error) ->
+    , (error) ->
       util.print error
-  .end
