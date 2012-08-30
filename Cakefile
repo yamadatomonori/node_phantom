@@ -2,17 +2,6 @@ muffin = require 'muffin'
 util = require 'util'
 Q = require 'q'
 
-      
-task 'phantom', 'set up phantomjs and run the tests', ->
-  Q.fcall ->
-    muffin.exec 'ln -s /app/phantomjs/bin/phantomjs /app/bin/phantomjs'
-  .then ->
-    muffin.exec 'chmod a+x /app/phantomjs/bin/phantomjs'
-  .then ->
-    muffin.exec 'phantomjs hello.js' , (error, stdout, stderr) ->
-      util.print stdout
-      util.print stderr
-
 
 task 'stylesheets', 'convert gss into css', ->
   muffin.exec 'java -jar jar/closure-stylesheets.jar
@@ -71,3 +60,16 @@ task 'builder', 'building closure library script', ->
     
     Q.when (muffin.exec command)[1], (result) ->
       util.print result[0]
+
+      
+task 'phantom', 'set up phantomjs and run the tests', ->
+  Q.fcall ->
+    muffin.exec 'ln -s /app/phantomjs/bin/phantomjs /app/bin/phantomjs'
+  .then ->
+    muffin.exec 'chmod a+x /app/phantomjs/bin/phantomjs'
+  .then ->
+    muffin.exec 'phantomjs hello.js' , (error, stdout, stderr) ->
+      util.print stdout
+    ,(error) ->
+      util.print error
+      
