@@ -4,6 +4,7 @@ Q = require 'q'
 
       
 task 'phantom', 'set up phantomjs and run the tests', ->
+  muffin.exec 'ln -s /app/phantomjs/bin/phantomjs /app/bin/phantomjs'
   muffin.exec 'echo 1111', (error, stdout, stderr) ->
     sys.print stdout
     sys.print stderr
