@@ -8,7 +8,9 @@ page.onConsoleMessage = function(msg) {
   console.log(msg);
 };
 
-page.content = require('fs').read(
-    '/app/client/closure-library/closure/goog/editor/browserfeature_test.html');
+page.libraryPath = '/app/client/closure-library/closure/goog/';
+page.injectJs = 'base.js';
+
+page.content = require('fs').read('browserfeature_test.html');
 
 phantom.exit();
