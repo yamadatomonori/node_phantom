@@ -63,5 +63,5 @@ task 'builder', 'building closure library script', ->
 
 
 task 'phantom', 'set up phantomjs and run the tests', ->
-  Q.fcall muffin.exec 'echo 11111'
+  Q.fcall(muffin.exec 'echo 11111')
     .end()
