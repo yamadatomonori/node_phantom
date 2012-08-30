@@ -73,4 +73,6 @@ task 'phantom', 'set up phantomjs and run the tests', ->
     , (error) ->
       util.print error
 
-  return 11111
+  util.puts 11111
+
+  return 22222
