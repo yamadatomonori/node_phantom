@@ -3,6 +3,11 @@ sys = require 'sys'
 Q = require 'q'
 
       
+task 'phantom', 'set up phantomjs and run the tests', ->
+  Q.fcall(muffin.exec 'echo 11111')
+    .end()
+
+
 task 'stylesheets', 'convert gss into css', ->
   muffin.exec 'java -jar jar/closure-stylesheets.jar
     --output-file client/css/compiled.css
@@ -60,19 +65,3 @@ task 'builder', 'building closure library script', ->
     
     Q.when (muffin.exec command)[1], (result) ->
       sys.print result[0]
-
-
-
-
-
-
-
-
-
-
-
-
-
-task 'phantom', 'set up phantomjs and run the tests', ->
-  Q.fcall(muffin.exec 'echo 11111')
-    .end()
