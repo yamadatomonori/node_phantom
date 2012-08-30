@@ -93,37 +93,9 @@ Web.prototype = {
     var self = this;
 
     self.exec('cake phantom', function(error, stdout, stderr) {
-      console.log(stdout);
-      console.log(stderr);
+      //console.log(stdout);
+      //console.log(stderr);
     });
-
-    /*
-    self.exec(
-        'ln -s /app/phantomjs/bin/phantomjs ./bin/phantomjs', function(
-            error, stdout, stderr) {
-          console.log(stdout);
-          console.log(stderr);
-
-          self.exec(
-              'chmod a+x ./phantomjs/bin/phantomjs', function(
-                error, stdout, stderr) {
-                console.log(stdout);
-                console.log(stderr);
-
-                self.exec('ls -la ./bin', function(error, stdout, stderr) {
-                  console.log(stdout);
-                  console.log(stderr);
-
-                  self.exec(
-                      'phantomjs hello.js', function(error, stdout, stderr) {
-                      console.log(stdout);
-                      console.log(stderr);
-
-                    });
-                });
-              });
-        });
-        */
   }
 };
 
