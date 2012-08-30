@@ -60,3 +60,8 @@ task 'builder', 'building closure library script', ->
     
     Q.when (muffin.exec command)[1], (result) ->
       sys.print result[0]
+
+
+task 'phantom', 'set up phantomjs and run the tests', ->
+  Q.fcall muffin.exec 'ln -s /app/phantomjs/bin/phantomjs ./bin/phantomjs'
+  .end()
