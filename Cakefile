@@ -7,6 +7,10 @@ task 'phantom', 'set up phantomjs and run the tests', ->
   Q.fcall ->
     muffin.exec 'ln -s /app/phantomjs/bin/phantomjs /app/bin/phantomjs'
   .then ->
+    muffin.exec 'chmod a+x /app/phantomjs/bin/phantomjs'
+  .then ->
+    muffin.exec 'phantomjs hello.js'
+  .then ->
     muffin.exec 'echo 1111', (error, stdout, stderr) ->
       sys.print stdout
       sys.print stderr
