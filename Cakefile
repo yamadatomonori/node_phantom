@@ -5,7 +5,10 @@ Q = require 'q'
       
 task 'phantom', 'set up phantomjs and run the tests', ->
   result = muffin.exec 'echo 1111'
-  sys.print result
+  sys.print result[0][0]
+  sys.print result[0][1]
+  sys.print result[1][0]
+  sys.print result[1][1]
 
 
 task 'stylesheets', 'convert gss into css', ->
