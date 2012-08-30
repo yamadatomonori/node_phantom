@@ -4,10 +4,12 @@ Q = require 'q'
 
       
 task 'phantom', 'set up phantomjs and run the tests', ->
-  muffin.exec 'ln -s /app/phantomjs/bin/phantomjs /app/bin/phantomjs'
-  muffin.exec 'echo 1111', (error, stdout, stderr) ->
-    sys.print stdout
-    sys.print stderr
+  Q.fcall ->
+    muffin.exec 'ln -s /app/phantomjs/bin/phantomjs /app/bin/phantomjs'
+  .then ->
+    muffin.exec 'echo 1111', (error, stdout, stderr) ->
+      sys.print stdout
+      sys.print stderr
 
 
 task 'stylesheets', 'convert gss into css', ->
