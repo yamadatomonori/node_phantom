@@ -9,6 +9,6 @@ page.onConsoleMessage = function(msg) {
 };
 
 page.content = require('fs').read(
-    '/app/client/closure-library/closure/goog/editor/browserfeature_test.html');
+    '/app/client/closure-library/closure/goog/editor/browserfeature_test_console.html');
 
 phantom.exit();
