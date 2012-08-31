@@ -10,11 +10,15 @@ page.onConsoleMessage = function(msg) {
 
 
 page.open('http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
-  var firstChild = page.evaluate(function() {
-    return document.body.firstChild:
-  });
+  try {
+    var firstChild = page.evaluate(function() {
+      return document.body.firstChild:
+    });
 
-  console.log(firstChild);
+    console.log(firstChild);
+  } catch (er) {
+    console.log(er);
+  }
 
   phantom.exit();
 });
