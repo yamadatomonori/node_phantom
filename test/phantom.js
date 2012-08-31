@@ -11,5 +11,9 @@ page.onConsoleMessage = function(msg) {
 page.injectJs('testSuites.js');
 
 page.open('http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
+  var firstChild = page.evaluate(function() {
+    return document.body.firstChild;
+  });
+
   phantom.exit();
 });
