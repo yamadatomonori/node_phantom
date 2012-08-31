@@ -11,11 +11,11 @@ page.onConsoleMessage = function(msg) {
 page.injectJs('testSuites.js');
 
 page.open('http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
-  var firstChild = page.evaluate(function() {
-    return document.body.firstChild;
+  var firstChildInnerHTML = page.evaluate(function() {
+    return document.body.firstChild.innerHTML;
   });
 
-  console.log(firstChild);
+  console.log(firstChildInnerHTML);
 
   phantom.exit();
 });
