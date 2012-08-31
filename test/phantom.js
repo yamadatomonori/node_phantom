@@ -10,9 +10,6 @@ page.onConsoleMessage = function(msg) {
 
 page.injectJs('testSuites.js');
 
-page.open(
-    'http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
-
-      phantom.exit();
-    });
-
+page.open('http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
+  phantom.exit();
+});
