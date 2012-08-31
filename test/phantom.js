@@ -9,6 +9,6 @@ page.onConsoleMessage = function(msg) {
 };
 
 
-page.open('about:blank');
+page.open('http://localhost/test/index.html');
 
 phantom.exit();
