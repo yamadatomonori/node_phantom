@@ -9,5 +9,6 @@ page.onConsoleMessage = function(msg) {
 };
 
 page.open('http://quiet-castle-1767.herokuapp.com/test/index.html');
+console.log(111);
 
 phantom.exit();
