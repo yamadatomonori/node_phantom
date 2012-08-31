@@ -8,7 +8,11 @@ page.onConsoleMessage = function(msg) {
   console.log(msg);
 };
 
-page.open('http://quiet-castle-1767.herokuapp.com/test/index.html');
+try {
+  page.open('http://quiet-castle-1767.herokuapp.com/test/index.html');
+} catch (er) {
+  console.log(er);
+}
 
 console.log(111);
 
