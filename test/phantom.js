@@ -16,4 +16,4 @@ try {
 
 console.log(111);
 
-phantom.exit();
+//phantom.exit();
