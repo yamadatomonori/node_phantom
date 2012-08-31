@@ -61,6 +61,8 @@ Web.prototype = {
   builderCallback: function(error, stdout, stderr) {
     var self = this;
 
+    this.app.use(express.static(__dirname + '/client/compiled'));
+
     /*
     this.exec('cat client/js/compiled.js', function(error, stdout, stderr) {
       self.mapPath.call(self, '/compiled.js', 'js', error, stdout, stderr);
