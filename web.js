@@ -23,10 +23,10 @@ Web.prototype = {
   init: function() {
     var express = require('express');
 
-    var app = express.createServer(express.logger());
+    var app = express.createServer();
 
     app.configure(function() {
-      console.log(__dirname);
+      app.use(express.logger());
       app.use(express.static(__dirname + '/client'));
     });
 
@@ -47,7 +47,7 @@ Web.prototype = {
     var self = this;
 
     this.exec('cake builder', function(error, stdout, stderr) {
-      //self.builderCallback.call(self, error, stdout, stderr);
+      self.builderCallback.call(self, error, stdout, stderr);
     });
   },
 
