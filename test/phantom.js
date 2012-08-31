@@ -15,7 +15,7 @@ page.open('http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
     return document.body.firstChild;
   });
 
-  console.log(666);
+  console.log(firstChild);
 
   phantom.exit();
 });
