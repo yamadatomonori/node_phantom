@@ -1,3 +1,10 @@
+function assertEqual(arg1, arg2, message) {
+  if (arg1 == arg2) {
+    console.log(message);
+  }
+}
+
+
 var page = require('webpage').create();
 
 
@@ -8,14 +15,16 @@ page.onConsoleMessage = function(msg) {
   console.log(msg);
 };
 
-//page.injectJs('testSuites.js');
 
 page.open('http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
   var firstChildInnerHTML = page.evaluate(function() {
     return document.body.firstChild.innerHTML;
   });
 
-  console.log(firstChildInnerHTML);
+  assertEqual(
+      firstChildInnerHTML,
+      'goog.editor Demo',
+      'document.body.firstChild is rendered!!');
 
   phantom.exit();
 });
