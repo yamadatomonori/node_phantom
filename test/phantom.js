@@ -8,7 +8,6 @@ page.onConsoleMessage = function(msg) {
   console.log(msg);
 };
 
-
-page.open('http://localhost/test/index.html');
+page.open('http://quiet-castle-1767.herokuapp.com/test/index.html');
 
 phantom.exit();

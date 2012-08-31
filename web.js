@@ -34,10 +34,6 @@ Web.prototype = {
       console.log('Listening');
     });
 
-    for (var i in process.env) {
-      console.log(i + ' : ' + process.env[i]);
-    }
-
     this.compile();
   },
 
