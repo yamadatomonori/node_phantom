@@ -68,7 +68,7 @@ task 'phantom', 'set up phantomjs and run the tests', ->
   .then ->
     muffin.exec 'chmod a+x /app/phantomjs/bin/phantomjs'
   .then ->
-    muffin.exec 'phantomjs test.js' , (error, stdout, stderr) ->
+    muffin.exec 'phantomjs test/phantom.js' , (error, stdout, stderr) ->
       util.puts stdout
     , (error) ->
       util.puts error
