@@ -9,7 +9,10 @@ page.onConsoleMessage = function(msg) {
 };
 
 try {
-  page.open('http://quiet-castle-1767.herokuapp.com/test/index.html');
+  page.open(
+      'http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
+        phantom.exit();
+      });
 } catch (er) {
   console.log(er);
 }
