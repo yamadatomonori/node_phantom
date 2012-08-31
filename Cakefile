@@ -5,7 +5,7 @@ Q = require 'q'
 
 task 'stylesheets', 'convert gss into css', ->
   muffin.exec 'java -jar jar/closure-stylesheets.jar
-    --output-file client/css/compiled.css
+    --output-file client/compiled/compiled.css
     --output-renaming-map client/js/renaming_map.js
     --output-renaming-map-format CLOSURE_COMPILED
     --rename CLOSURE
@@ -53,7 +53,7 @@ task 'builder', 'building closure library script', ->
       --compiler_flags="--output_wrapper=(function() {%output%})();" 
       --compiler_jar=./jar/compiler.jar
       --namespace="myproject.start" 
-      --output_file=./client/js/compiled.js
+      --output_file=./client/compiled/compiled.js
       --output_mode=compiled
       --root=client/closure-library
       --root=client/js'
