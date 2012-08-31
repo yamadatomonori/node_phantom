@@ -59,19 +59,7 @@ Web.prototype = {
    * @this {Web}
    */
   builderCallback: function(error, stdout, stderr) {
-    var self = this;
-
     this.app.use(this.express.static(__dirname + '/client/compiled'));
-
-    /*
-    this.exec('cat client/js/compiled.js', function(error, stdout, stderr) {
-      self.mapPath.call(self, '/compiled.js', 'js', error, stdout, stderr);
-    });
-
-    this.exec('cat client/css/compiled.css', function(error, stdout, stderr) {
-      self.mapPath.call(self, '/compiled.css', 'css', error, stdout, stderr);
-    });
-    */
 
     this.runTest();
   },
