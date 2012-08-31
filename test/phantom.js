@@ -9,6 +9,6 @@ page.onConsoleMessage = function(msg) {
 };
 
 
-page.content = require('fs').read('/app/test/index.html');
+page.open('about:blank');
 
 phantom.exit();
