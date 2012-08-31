@@ -13,4 +13,4 @@ page.open(
       phantom.exit();
     });
 
-console.log(111);
+page.injectJs('testSuites.js');
