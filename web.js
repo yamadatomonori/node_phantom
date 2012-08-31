@@ -47,7 +47,7 @@ Web.prototype = {
     var self = this;
 
     this.exec('cake builder', function(error, stdout, stderr) {
-      self.builderCallback.call(self, error, stdout, stderr);
+      //self.builderCallback.call(self, error, stdout, stderr);
     });
   },
 
