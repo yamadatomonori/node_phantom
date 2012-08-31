@@ -44,6 +44,8 @@ Web.prototype = {
   compile: function() {
     var self = this;
 
+    this.exec('mkdir /app/client/compiled');
+
     this.exec('cake builder', function(error, stdout, stderr) {
       self.builderCallback.call(self, error, stdout, stderr);
     });
