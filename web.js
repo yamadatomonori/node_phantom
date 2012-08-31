@@ -26,6 +26,7 @@ Web.prototype = {
     var app = express.createServer(express.logger());
 
     app.configure(function() {
+      console.log(__dirname);
       app.use(express.static(__dirname + '/client'));
     });
 
