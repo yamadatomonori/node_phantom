@@ -59,7 +59,8 @@ Web.prototype = {
    * @this {Web}
    */
   builderCallback: function(error, stdout, stderr) {
-    this.app.use(this.express.static(__dirname + '/client/compiled'));
+    this.app.use(
+        this.express.static('/compiled', __dirname + '/client/compiled'));
 
     this.runTest();
   },
