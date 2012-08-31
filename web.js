@@ -27,7 +27,7 @@ Web.prototype = {
 
     app.configure(function() {
       app.use(express.logger());
-      app.use(express.static(__dirname + '/client'));
+      app.use('/client', express.static(__dirname + '/client'));
     });
 
     app.listen(process.env.PORT || 3000, function() {
