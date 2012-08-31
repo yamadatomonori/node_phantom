@@ -21,9 +21,9 @@ Web.prototype = {
    * @this {Web}
    */
   init: function() {
-    var express = require('express');
+    var express = this.express = require('express');
 
-    var app = express();
+    var app = this.app = express();
 
     app.configure(function() {
       app.use(express.logger());
@@ -33,8 +33,6 @@ Web.prototype = {
     app.listen(process.env.PORT || 3000, function() {
       console.log('Listening');
     });
-
-    this.app = app;
 
     this.compile();
   },
