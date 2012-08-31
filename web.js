@@ -61,6 +61,7 @@ Web.prototype = {
   builderCallback: function(error, stdout, stderr) {
     var self = this;
 
+    /*
     this.exec('cat client/js/compiled.js', function(error, stdout, stderr) {
       self.mapPath.call(self, '/compiled.js', 'js', error, stdout, stderr);
     });
@@ -68,6 +69,7 @@ Web.prototype = {
     this.exec('cat client/css/compiled.css', function(error, stdout, stderr) {
       self.mapPath.call(self, '/compiled.css', 'css', error, stdout, stderr);
     });
+    */
 
     this.runTest();
   },
