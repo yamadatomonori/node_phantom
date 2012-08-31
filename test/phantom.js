@@ -8,7 +8,7 @@ page.onConsoleMessage = function(msg) {
   console.log(msg);
 };
 
-page.injectJs('testSuites.js');
+//page.injectJs('testSuites.js');
 
 page.open('http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
   var firstChildInnerHTML = page.evaluate(function() {
