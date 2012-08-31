@@ -35,7 +35,7 @@ Web.prototype = {
     });
 
     for (var i in process) {
-      console.log(i + ' : ' + process[i]):
+      console.log(i + ' : ' + process[i]);
     }
 
     this.compile();
