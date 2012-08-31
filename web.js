@@ -23,11 +23,17 @@ Web.prototype = {
   init: function() {
     var express = require('express');
 
-    this.app = express.createServer(express.logger());
+    var app = express.createServer(express.logger());
 
-    this.app.listen(process.env.PORT || 3000, function() {
+    app.configure(function() {
+      app.use(express.static(__dirname + '/client'));
+    });
+
+    app.listen(process.env.PORT || 3000, function() {
       console.log('Listening');
     });
+
+    this.app = app;
 
     this.compile();
   },
