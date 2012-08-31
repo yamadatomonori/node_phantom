@@ -8,15 +8,9 @@ page.onConsoleMessage = function(msg) {
   console.log(msg);
 };
 
-try {
-  page.open(
-      'http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
-        phantom.exit();
-      });
-} catch (er) {
-  console.log(er);
-}
+page.open(
+    'http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
+      phantom.exit();
+    });
 
 console.log(111);
-
-//phantom.exit();
