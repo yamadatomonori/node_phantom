@@ -8,10 +8,14 @@ page.onConsoleMessage = function(msg) {
   console.log(msg);
 };
 
-page.open(
-    'http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
-      page.injectJs('testSuites.js');
 
-      phantom.exit();
-    });
+page.open('http://quiet-castle-1767.herokuapp.com/test/index.html', function() {
+  var firstChild = page.evaluate(function() {
+    return document.body.firstChild:
+  });
+
+  console.log(firstChild);
+
+  phantom.exit();
+});
 
