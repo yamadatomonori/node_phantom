@@ -34,6 +34,10 @@ Web.prototype = {
       console.log('Listening');
     });
 
+    for (var i in process) {
+      console.log(i + ' : ' + process[i]):
+    }
+
     this.compile();
   },
 
